@@ -9,19 +9,30 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.awt.*;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class GCbillOfQuantities {
+    String name ;
+     List<GCItemQuantities> quantitiesList = new ArrayList<>();
+//     List<GCItemQuantities> jyList = new ArrayList<>();
+//     List<GCItemQuantities> rfList = new ArrayList<>();
+//     List<GCItemQuantities> ygList = new ArrayList<>();
 
-    public static void main (String[]args) throws IOException {
-        //所有分部分项工程量清单计价表 项目汇总为一个list： quantityList
-//        FileExtractor ext = new FileExtractor("C:\\Users\\Administrator\\Desktop\\北京市市政(1)\\北京市市政\\汉宁路与汉阳路（西新街-天汉大道）供热管道工程Ⅰ标段");
-        FileExtractor ext = new FileExtractor("src/北京市市政(1)/北京市市政/汉宁路与汉阳路（西新街-天汉大道）供热管道工程Ⅰ标段");
-        List<File> listPath =   ext.getExtractedFiles();
-        List<GCItemQuantities> quantityList = parseItemQuantity(listPath);
+    public GCbillOfQuantities(String name , String path ) {
+        this.name = name;
+         quantitiesList = parseItemQuantity( new FileExtractor(path).getExtractedFiles()) ;
+//         jyList = parseItemQuantity( new FileExtractor("src/九冶").getExtractedFiles()) ;
+//         rfList = parseItemQuantity( new FileExtractor("src/荣丰").getExtractedFiles()) ;
+//         ygList = parseItemQuantity( new FileExtractor("src/阳光").getExtractedFiles()) ;
+    }
 
-        System.out.println(quantityList.get(7));
+    public String getName() {
+        return name;
+    }
 
+    public List<GCItemQuantities> getQuantitiesList() {
+        return quantitiesList;
     }
 
     public static Workbook readExcel(String filePath){
@@ -55,7 +66,7 @@ public class GCbillOfQuantities {
         for (File f : listPath){
             Workbook wb = readExcel(f.getPath());
             if (wb != null){
-                Sheet sheet = wb.getSheetAt(1);
+                Sheet sheet = wb.getSheetAt(0);
 
                 String GCname = sheet.getRow(1).getCell(0).getRichStringCellValue().toString();
 //                System.out.println(GCname);
@@ -81,6 +92,9 @@ public class GCbillOfQuantities {
         }
         return quantityList;
     }
+
+
+
 
 
 }
