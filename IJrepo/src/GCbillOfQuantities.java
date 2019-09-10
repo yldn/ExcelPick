@@ -1,9 +1,7 @@
 
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFCellStyle;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.awt.*;
@@ -15,16 +13,9 @@ import java.util.List;
 public class GCbillOfQuantities {
     String name ;
      List<GCItemQuantities> quantitiesList = new ArrayList<>();
-//     List<GCItemQuantities> jyList = new ArrayList<>();
-//     List<GCItemQuantities> rfList = new ArrayList<>();
-//     List<GCItemQuantities> ygList = new ArrayList<>();
-
     public GCbillOfQuantities(String name , String path ) {
         this.name = name;
          quantitiesList = parseItemQuantity( new FileExtractor(path).getExtractedFiles()) ;
-//         jyList = parseItemQuantity( new FileExtractor("src/九冶").getExtractedFiles()) ;
-//         rfList = parseItemQuantity( new FileExtractor("src/荣丰").getExtractedFiles()) ;
-//         ygList = parseItemQuantity( new FileExtractor("src/阳光").getExtractedFiles()) ;
     }
 
     public String getName() {
@@ -35,7 +26,7 @@ public class GCbillOfQuantities {
         return quantitiesList;
     }
 
-    public static Workbook readExcel(String filePath){
+    public  Workbook readExcel(String filePath){
         Workbook wb = null;
         if(filePath==null){
             return null;
@@ -59,8 +50,8 @@ public class GCbillOfQuantities {
         }
         return wb;
     }
-
-    public static List<GCItemQuantities> parseItemQuantity(List<File> listPath){
+    ///将工程目录下所有的xlsx文件读取出来，将所有单项解析到list里
+    public List<GCItemQuantities> parseItemQuantity(List<File> listPath){
         //读所有list里的
         List<GCItemQuantities> quantityList = new ArrayList<GCItemQuantities>();
         for (File f : listPath){
@@ -71,7 +62,7 @@ public class GCbillOfQuantities {
                 String GCname = sheet.getRow(1).getCell(0).getRichStringCellValue().toString();
 //                System.out.println(GCname);
 
-                //从表2 第五行查起一直到 physicalnumberofRows
+                //从表1 第五行查起一直到 physicalnumberofRows
                 for (int i  = 5 ; i< sheet.getPhysicalNumberOfRows();i++){
                     if(sheet.getRow(i).getCell(0)!= null && sheet.getRow(i).getCell(0).getCellType() == Cell.CELL_TYPE_NUMERIC){
                         Row row = sheet.getRow(i);
@@ -93,7 +84,69 @@ public class GCbillOfQuantities {
         return quantityList;
     }
 
+    public  void exportExcelAsXSLX(String path ) throws IOException {
+        Workbook wb = new XSSFWorkbook();
+        Sheet sheet = wb.createSheet("GCBillOfQuantities");
+        CellStyle style = wb.createCellStyle();
+        style.setAlignment(XSSFCellStyle.ALIGN_CENTER);
 
+        Row row = sheet.createRow(0);
+
+        Cell cell = row.createCell(0);
+        cell.setCellValue("单位");
+        cell.setCellStyle(style);
+
+        cell = row.createCell(1);
+        cell.setCellValue("工程名称");
+        cell.setCellStyle(style);
+        cell = row.createCell(2);
+        cell.setCellValue("序号");
+        cell.setCellStyle(style);
+        cell = row.createCell(3);
+        cell.setCellValue("项目编码");
+        cell.setCellStyle(style);
+        cell = row.createCell(4);
+        cell.setCellValue("项目名称");
+        cell.setCellStyle(style);
+        cell = row.createCell(5);
+        cell.setCellValue("计量单位");
+        cell.setCellStyle(style);
+        cell = row.createCell(6);
+        cell.setCellValue("工程数量");
+        cell.setCellStyle(style);
+        cell = row.createCell(7);
+        cell.setCellValue("综合单价（元）");
+        cell.setCellStyle(style);
+        cell = row.createCell(8);
+        cell.setCellValue("合价（元）");
+        cell.setCellStyle(style);
+
+        for (int i = 0; i < this.getQuantitiesList().size(); i++) {
+            row = sheet.createRow(i+1);
+            GCItemQuantities item = this.getQuantitiesList().get(i);
+            row.createCell(0).setCellValue(this.getName());
+            row.createCell(1).setCellValue(item.getGCname());
+            row.createCell(2).setCellValue(item.getSerialNumber());
+            row.createCell(3).setCellValue(item.getItemCode());
+            row.createCell(4).setCellValue(item.getItemName());
+            row.createCell(5).setCellValue(item.getUnit());
+            row.createCell(6).setCellValue(item.getGcQuantities());
+            row.createCell(7).setCellValue(item.getUnitPrice());
+            row.createCell(8).setCellValue(item.getComboPrice());
+
+        }
+
+        //output
+        File file = new File(path);
+        FileOutputStream output = new FileOutputStream(file);
+        wb.write(output);
+        output.close();
+
+    }
+    ///TODO
+    public void exportExcelAsSheet(){
+
+    }
 
 
 
