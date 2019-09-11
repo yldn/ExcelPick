@@ -1,4 +1,4 @@
-public class GCItemQuantities {
+public class GCItemQuantities implements GCUnit {
     public GCItemQuantities(String GCname, int serialNumber, String itemCode, String itemName, String unit, double gcQuantities, double unitPrice, double comboPrice) {
         this.GCname = GCname;
         this.serialNumber = serialNumber;

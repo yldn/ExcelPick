@@ -7,10 +7,9 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.awt.*;
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-public class GCbillOfQuantities {
+public class GCbillOfQuantities implements GCList{
     String name ;
      List<GCItemQuantities> quantitiesList = new ArrayList<>();
     public GCbillOfQuantities(String name , String path ) {
@@ -26,7 +25,7 @@ public class GCbillOfQuantities {
         return quantitiesList;
     }
 
-    public  Workbook readExcel(String filePath){
+    private  Workbook readExcel(String filePath){
         Workbook wb = null;
         if(filePath==null){
             return null;
@@ -71,8 +70,19 @@ public class GCbillOfQuantities {
                         String itemName = row.getCell(2).getRichStringCellValue().toString();
                         String unit = row.getCell(4).getRichStringCellValue().toString();
                         double gcQuantities = row.getCell(5).getNumericCellValue();
-                        double unitPrice = row.getCell(6).getNumericCellValue();
-                        double comboPrice = row.getCell(8).getNumericCellValue();
+                        double unitPrice;
+                        if(row.getCell(6) != null){
+                            unitPrice = row.getCell(6).getNumericCellValue()  ;
+                        }
+                        else
+                            unitPrice = 0;
+
+                        double comboPrice ;
+                        if(row.getCell(8) != null){
+                            comboPrice = row.getCell(8).getNumericCellValue()  ;
+                        }
+                        else
+                            comboPrice = 0;
 
                         GCItemQuantities itemQuantities = new GCItemQuantities(GCname,serialNumber,itemCode,itemName,unit,gcQuantities,unitPrice,comboPrice);
 
@@ -120,7 +130,6 @@ public class GCbillOfQuantities {
         cell = row.createCell(8);
         cell.setCellValue("合价（元）");
         cell.setCellStyle(style);
-
         for (int i = 0; i < this.getQuantitiesList().size(); i++) {
             row = sheet.createRow(i+1);
             GCItemQuantities item = this.getQuantitiesList().get(i);
@@ -133,9 +142,7 @@ public class GCbillOfQuantities {
             row.createCell(6).setCellValue(item.getGcQuantities());
             row.createCell(7).setCellValue(item.getUnitPrice());
             row.createCell(8).setCellValue(item.getComboPrice());
-
         }
-
         //output
         File file = new File(path);
         FileOutputStream output = new FileOutputStream(file);
@@ -143,10 +150,7 @@ public class GCbillOfQuantities {
         output.close();
 
     }
-    ///TODO
-    public void exportExcelAsSheet(){
 
-    }
 
 
 

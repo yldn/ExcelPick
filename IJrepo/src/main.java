@@ -1,10 +1,22 @@
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFCellStyle;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import sun.misc.GC;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.*;
 
 public class main {
+
+    //拦标价清单
+    static GCblockPriceQuantities blockPriceList;
+
+    //decimal formatter
+    static DecimalFormat df = new DecimalFormat("0.00");
     ///总表（所有单位，所有项目）
     static List<GCbillOfQuantities> companies = new ArrayList<GCbillOfQuantities>();
     //筛选表
@@ -19,54 +31,44 @@ public class main {
     static int number = 30 ;
 
     public static void main (String[]args) throws IOException {
+        blockPriceList = new GCblockPriceQuantities("拦标价清单","src/拦标价清单");
+
         companies.add(new GCbillOfQuantities("北京", "src/北京"));
         companies.add(new GCbillOfQuantities("九冶", "src/九冶"));
         companies.add(new GCbillOfQuantities("荣丰", "src/荣丰"));
         companies.add(new GCbillOfQuantities("阳光", "src/阳光"));
 
-        companies.get(0).exportExcelAsXSLX("src/北京.xlsx");
-        companies.get(1).exportExcelAsXSLX("src/九冶.xlsx");
-        companies.get(2).exportExcelAsXSLX("src/荣丰.xlsx");
-        companies.get(3).exportExcelAsXSLX("src/阳光.xlsx");
-//        System.out.println(companies.get(0).getQuantitiesList().get(0).getGCname());
-        //所有分部分项工程量清单计价表 项目汇总为一个list： quantityList
 
-        //如果
-        if (companies.get(0).getQuantitiesList().size()> number ){
+        if (blockPriceList.getQuantitiesList().size()> number ){
 //              List<Integer> GCchecklist =  pick(companies.get(0).getQuantitiesList().size() , number);
             //测试数组
+
             for (int i = 0; i < number; i++) {
                 GCchecklist.add(i);
             }
-            ///罗列单价表
-            GCUnitPrice = summerizeUnitPrice();
-            //打分表
-            GCUnitpoints = calculatePoint();
-            ////TEST
-            for (int i = 0; i < GCUnitPrice.size(); i++) {
-//                System.out.println("单价：");
-                System.out.println(Arrays.toString(GCUnitPrice.get(i).toArray()));
-                System.out.println("-> "+"Base : "+ Double.valueOf(new DecimalFormat("0.00").format(calculateBase(GCUnitPrice.get(i)))));
-                System.out.println(Arrays.toString(GCUnitpoints.get(i).toArray()));
-                System.out.println("-----------------------------------");
-            }
 
-            ////汇总
-            //根据每家公司的总分排序
-            List<Double> summe = new ArrayList<Double>();
-////            /////4
-            for (int i = 0; i < GCUnitpoints.get(0).size(); i++) {
-                DecimalFormat df = new DecimalFormat("0.00");
-                double sum = 0.0;
-                for (int j = 0; j < GCUnitpoints.size(); j++) {
-                    sum += GCUnitpoints.get(j).get(i);
-                }
-                summe.add( Double.valueOf(df.format(sum)) );
-            }
+            GCUnitPrice = summerizeUnitPrice();
+            GCUnitpoints = calculatePoint();
+            List<Double> summe = summerizePoint();
+            exportAll("src/汇总.xlsx");
+
             System.out.println("SUMME："+ Arrays.toString(summe.toArray()));
         }
-    }
 
+    }
+////////////////生成汇总列表
+    public static List<Double> summerizePoint(){
+        List<Double> summe = new ArrayList<Double>();
+        for (int i = 0; i < GCUnitpoints.get(0).size(); i++) {
+            double sum = 0.0;
+            for (int j = 0; j < GCUnitpoints.size(); j++) {
+                sum += GCUnitpoints.get(j).get(i);
+            }
+            summe.add( Double.valueOf(df.format(sum)) );
+        }
+        return  summe;
+    }
+///////////////生成综合单价评分表
     public static List<List<Double>>calculatePoint(){
         List<List<Double>> out = new ArrayList<>();
         for (int i = 0; i < GCUnitPrice.size(); i++) {
@@ -78,14 +80,12 @@ public class main {
     private static List<Double> calculateP(int i ){
         List<Double> out = new ArrayList<Double>();
 //        保留两位小数
-        DecimalFormat df = new DecimalFormat("0.00");
         for (int j = 0; j < GCUnitPrice.get(i).size(); j++) {
            double x = Double.valueOf(df.format(calculatepoint(discount(calculateOffset(GCUnitPrice.get(i).get(j),calculateBase(GCUnitPrice.get(i))))))) ;
             out.add(x);
         }
         return out;
     }
-
 
     //根据checklist里将所有公司的对应单价加入list
     //比较所有list里checklist对应项
@@ -114,7 +114,6 @@ public class main {
 
     ///////////////////////具体评标办法
     /////////////抽取 number 个项目
-    /////////////
     private static List<Integer> pick (int range , int number){
         List<Integer> out = new ArrayList<Integer>();
         Random random = new Random();
@@ -150,7 +149,7 @@ public class main {
             sum += x;
         }
 //        System.out.println("Base :"+ sum/companies.size()*0.97);
-        return sum/companies.size()*0.97;
+        return Double.valueOf(df.format(sum/companies.size()*0.97))  ;
     }
     //计算偏差
     private static double calculateOffset(double unitPrice , double basePrice ){
@@ -165,6 +164,233 @@ public class main {
     private static double calculatepoint(double discount){
         return discount + 1 >0 ? discount+1 : 0 ;
     }
+
+    //// export
+    static Workbook wb = new XSSFWorkbook();
+
+    public static void exportAll(String path) throws IOException {
+
+        exportblockPrice(blockPriceList);
+        for (GCbillOfQuantities bq : companies) {
+            exportBillOfQuantities(bq);
+        }
+//        exportchecklist(GCchecklist);
+        exportSummerize(companies,GCchecklist,GCUnitPrice,GCUnitpoints);
+
+        File file = new File(path);
+        FileOutputStream output = new FileOutputStream(file);
+        wb.write(output);
+        output.close();
+
+    }
+
+ ///////输出拦标价单项
+     private  static  Sheet exportblockPrice(GCblockPriceQuantities bq){
+         Sheet sh = wb.createSheet(bq.getName());
+         CellStyle style = wb.createCellStyle();
+         style.setAlignment(XSSFCellStyle.ALIGN_CENTER);
+
+         Row row = sh.createRow(0);
+         Cell cell ;
+         cell = row.createCell(0);
+         cell.setCellValue("工程名称");
+         cell.setCellStyle(style);
+         cell = row.createCell(1);
+         cell.setCellValue("序号");
+         cell.setCellStyle(style);
+         cell = row.createCell(2);
+         cell.setCellValue("项目编码");
+         cell.setCellStyle(style);
+         cell = row.createCell(3);
+         cell.setCellValue("项目名称");
+         cell.setCellStyle(style);
+         cell = row.createCell(4);
+         cell.setCellValue("计量单位");
+         cell.setCellStyle(style);
+         cell = row.createCell(5);
+         cell.setCellValue("工程数量");
+         cell.setCellStyle(style);
+
+
+         for (int i = 0; i < bq.getQuantitiesList().size(); i++) {
+             row = sh.createRow(i+1);
+             GCblockPriceItemQuantities item = bq.getQuantitiesList().get(i);
+             row.createCell(0).setCellValue(item.getGCname());
+             row.createCell(1).setCellValue(item.getSerialNumber());
+             row.createCell(2).setCellValue(item.getItemCode());
+             row.createCell(3).setCellValue(item.getItemName());
+             row.createCell(4).setCellValue(item.getUnit());
+             row.createCell(5).setCellValue(item.getGcQuantities());
+         }
+         return sh;
+
+
+     }
+
+////////输出工程量单项
+    private static Sheet exportBillOfQuantities(GCbillOfQuantities bq){
+        Sheet sh = wb.createSheet(bq.getName());
+        CellStyle style = wb.createCellStyle();
+        style.setAlignment(XSSFCellStyle.ALIGN_CENTER);
+
+        Row row = sh.createRow(0);
+        Cell cell = row.createCell(0);
+        cell.setCellValue("单位");
+        cell.setCellStyle(style);
+
+        cell = row.createCell(1);
+        cell.setCellValue("工程名称");
+        cell.setCellStyle(style);
+        cell = row.createCell(2);
+        cell.setCellValue("序号");
+        cell.setCellStyle(style);
+        cell = row.createCell(3);
+        cell.setCellValue("项目编码");
+        cell.setCellStyle(style);
+        cell = row.createCell(4);
+        cell.setCellValue("项目名称");
+        cell.setCellStyle(style);
+        cell = row.createCell(5);
+        cell.setCellValue("计量单位");
+        cell.setCellStyle(style);
+        cell = row.createCell(6);
+        cell.setCellValue("工程数量");
+        cell.setCellStyle(style);
+        cell = row.createCell(7);
+        cell.setCellValue("综合单价（元）");
+        cell.setCellStyle(style);
+        cell = row.createCell(8);
+        cell.setCellValue("合价（元）");
+        cell.setCellStyle(style);
+
+        for (int i = 0; i < bq.getQuantitiesList().size(); i++) {
+            row = sh.createRow(i+1);
+            GCItemQuantities item = bq.getQuantitiesList().get(i);
+            row.createCell(0).setCellValue(bq.getName());
+            row.createCell(1).setCellValue(item.getGCname());
+            row.createCell(2).setCellValue(item.getSerialNumber());
+            row.createCell(3).setCellValue(item.getItemCode());
+            row.createCell(4).setCellValue(item.getItemName());
+            row.createCell(5).setCellValue(item.getUnit());
+            row.createCell(6).setCellValue(item.getGcQuantities());
+            row.createCell(7).setCellValue(item.getUnitPrice());
+            row.createCell(8).setCellValue(item.getComboPrice());
+        }
+        return sh;
+    }
+
+    private static Sheet exportchecklist(List<Integer> checklist){
+        Sheet sh = wb.createSheet("筛选表");
+        CellStyle style = wb.createCellStyle();
+        style.setAlignment(XSSFCellStyle.ALIGN_CENTER);
+
+        Row row = sh.createRow(0);
+        Cell cell ;
+        cell = row.createCell(0);
+        cell.setCellValue("工程名称");
+        cell.setCellStyle(style);
+        cell = row.createCell(1);
+        cell.setCellValue("序号");
+        cell.setCellStyle(style);
+        cell = row.createCell(2);
+        cell.setCellValue("项目编码");
+        cell.setCellStyle(style);
+        cell = row.createCell(3);
+        cell.setCellValue("项目名称");
+        cell.setCellStyle(style);
+        cell = row.createCell(4);
+        cell.setCellValue("计量单位");
+        cell.setCellStyle(style);
+        cell = row.createCell(5);
+        cell.setCellValue("工程数量");
+        cell.setCellStyle(style);
+
+        for (int i = 0; i < checklist.size(); i++) {
+            row = sh.createRow(i+1);
+            GCblockPriceItemQuantities item = blockPriceList.getQuantitiesList().get(checklist.get(i));
+            row.createCell(0).setCellValue(item.getGCname());
+            row.createCell(1).setCellValue(item.getSerialNumber());
+            row.createCell(2).setCellValue(item.getItemCode());
+            row.createCell(3).setCellValue(item.getItemName());
+            row.createCell(4).setCellValue(item.getUnit());
+            row.createCell(5).setCellValue(item.getGcQuantities());
+        }
+
+        return  sh ;
+    }
+
+    private static Sheet exportSummerize(List<GCbillOfQuantities> companies ,List<Integer> checklist, List<List<Double>> GCUnitPrice, List<List<Double>> GCUnitpoints){
+        Sheet sh = wb.createSheet("综合单价");
+        CellStyle style = wb.createCellStyle();
+        style.setAlignment(XSSFCellStyle.ALIGN_CENTER);
+
+        Row row = sh.createRow(0);
+        Cell cell ;
+        cell = row.createCell(0);
+        cell.setCellValue("工程名称");
+        cell.setCellStyle(style);
+        cell = row.createCell(1);
+        cell.setCellValue("序号");
+        cell.setCellStyle(style);
+        cell = row.createCell(2);
+        cell.setCellValue("项目编码");
+        cell.setCellStyle(style);
+        cell = row.createCell(3);
+        cell.setCellValue("项目名称");
+        cell.setCellStyle(style);
+        cell = row.createCell(4);
+        cell.setCellValue("计量单位");
+        cell.setCellStyle(style);
+        cell = row.createCell(5);
+        cell.setCellValue("工程数量");
+        cell.setCellStyle(style);
+        //公司名字
+        for (int i = 0; i < companies.size(); i++) {
+            GCbillOfQuantities c = companies.get(i);
+            cell = row.createCell(6+i);
+            cell.setCellValue(c.getName());
+        }
+        cell = row.createCell(6+companies.size());
+        cell.setCellValue("基准价");
+        cell.setCellStyle(style);
+        ///填内容
+        int p = 1;
+        for (int i = 0; i < checklist.size(); i++) {
+            row = sh.createRow(p);
+            GCblockPriceItemQuantities item = blockPriceList.getQuantitiesList().get(checklist.get(i));
+            row.createCell(0).setCellValue(item.getGCname());
+            row.createCell(1).setCellValue(item.getSerialNumber());
+            row.createCell(2).setCellValue(item.getItemCode());
+            row.createCell(3).setCellValue(item.getItemName());
+            row.createCell(4).setCellValue(item.getUnit());
+            row.createCell(5).setCellValue(item.getGcQuantities());
+//            System.out.println(GCUnitpoints.size());
+            for (int j = 0; j < companies.size(); j++) {
+                row.createCell(6+j).setCellValue(GCUnitPrice.get(i).get(j));
+            }
+//            System.out.println(calculateBase(GCUnitPrice.get(i)));
+            row.createCell(6+companies.size()).setCellValue(calculateBase(GCUnitPrice.get(i)));
+            row = sh.createRow(p+1);
+            /////得分
+            row.createCell(0).setCellValue("得分: ");
+            for (int j = 0; j < companies.size(); j++) {
+                row.createCell(6+j).setCellValue(GCUnitpoints.get(i).get(j));
+            }
+
+            p+=2;
+        }
+
+        row = row = sh.createRow(++p);
+        row.createCell(0).setCellValue("总分： ");
+
+        List<Double> summe = summerizePoint();
+        for (int j = 0; j < companies.size(); j++) {
+            row.createCell(6+j).setCellValue(summe.get(j));
+        }
+        return sh;
+    }
+
+
 
 
 }
