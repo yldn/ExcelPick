@@ -3,14 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="86757b43-985f-430c-8eea-4fe8aaaf1de3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IJrepo/GCItemQuantities.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IJrepo/GCItemQuantities.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IJrepo/GCbillOfQuantities.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IJrepo/GCbillOfQuantities.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/IJrepo/main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IJrepo/main$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/IJrepo/main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IJrepo/main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GCItemQuantities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GCItemQuantities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GCbillOfQuantities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GCbillOfQuantities.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IJrepo/汇总.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IJrepo/汇总.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../汉宁路与汉阳路（西新街-天汉大道）供热管道工程ⅠⅠ标段/开标/商务标打分表2.xls" beforeDir="false" afterPath="$PROJECT_DIR$/../汉宁路与汉阳路（西新街-天汉大道）供热管道工程ⅠⅠ标段/开标/商务标打分表2.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/汇总.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/汇总.xlsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

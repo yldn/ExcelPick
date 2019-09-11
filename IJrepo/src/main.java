@@ -38,21 +38,20 @@ public class main {
         companies.add(new GCbillOfQuantities("荣丰", "src/荣丰"));
         companies.add(new GCbillOfQuantities("阳光", "src/阳光"));
 
-
         if (blockPriceList.getQuantitiesList().size()> number ){
-//              List<Integer> GCchecklist =  pick(companies.get(0).getQuantitiesList().size() , number);
+              GCchecklist =  pick(blockPriceList.getQuantitiesList().size() , number);
             //测试数组
 
-            for (int i = 0; i < number; i++) {
-                GCchecklist.add(i);
-            }
+//            for (int i = 0; i < number; i++) {
+//                GCchecklist.add(i);
+//            }
 
             GCUnitPrice = summerizeUnitPrice();
             GCUnitpoints = calculatePoint();
             List<Double> summe = summerizePoint();
             exportAll("src/汇总.xlsx");
 
-            System.out.println("SUMME："+ Arrays.toString(summe.toArray()));
+//            System.out.println("SUMME："+ Arrays.toString(summe.toArray()));
         }
 
     }
