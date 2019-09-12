@@ -31,12 +31,12 @@ public class main {
     static int number = 30 ;
 
     public static void main (String[]args) throws IOException {
-        blockPriceList = new GCblockPriceQuantities("拦标价清单","src/拦标价清单");
+        blockPriceList = new GCblockPriceQuantities("拦标价清单","C:\\Users\\Administrator\\Desktop\\西安外国语大学支线供热管道工程\\拦标价清单");
 
-        companies.add(new GCbillOfQuantities("北京", "src/北京"));
-        companies.add(new GCbillOfQuantities("九冶", "src/九冶"));
-        companies.add(new GCbillOfQuantities("荣丰", "src/荣丰"));
-        companies.add(new GCbillOfQuantities("阳光", "src/阳光"));
+        companies.add(new GCbillOfQuantities("陕西鼎固", "C:\\Users\\Administrator\\Desktop\\西安外国语大学支线供热管道工程\\陕西鼎固清单计价表和工程量清单"));
+        companies.add(new GCbillOfQuantities("陕西航天", "C:\\Users\\Administrator\\Desktop\\西安外国语大学支线供热管道工程\\陕西航天建筑清单计价表和工程量清单"));
+        companies.add(new GCbillOfQuantities("太原安装", "C:\\Users\\Administrator\\Desktop\\西安外国语大学支线供热管道工程\\太原安装清单计价表和工程量清单"));
+//        companies.add(new GCbillOfQuantities("亚玄", "C:\\Users\\Administrator\\Desktop\\大荔县集中供热管道工程四条管线项目供热管道工程\\亚玄"));
 
         if (blockPriceList.getQuantitiesList().size()> number ){
               GCchecklist =  pick(blockPriceList.getQuantitiesList().size() , number);
@@ -49,7 +49,7 @@ public class main {
             GCUnitPrice = summerizeUnitPrice();
             GCUnitpoints = calculatePoint();
             List<Double> summe = summerizePoint();
-            exportAll("src/汇总.xlsx");
+            exportAll("C:\\Users\\Administrator\\Desktop\\西安外国语大学支线供热管道工程\\汇总.xlsx");
 
 //            System.out.println("SUMME："+ Arrays.toString(summe.toArray()));
         }
