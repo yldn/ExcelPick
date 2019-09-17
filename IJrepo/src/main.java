@@ -28,15 +28,15 @@ public class main {
     static List<List<Double>> GCUnitpoints = new ArrayList<>();
 
     //挑出 number个
-    static int number = 30 ;
+    static int number = 20 ;
 
     public static void main (String[]args) throws IOException {
-        blockPriceList = new GCblockPriceQuantities("拦标价清单","C:\\Users\\Administrator\\Desktop\\西安外国语大学支线供热管道工程\\拦标价清单");
+        blockPriceList = new GCblockPriceQuantities("拦标价清单","/Users/liuyang/Desktop/ExcelPick/大荔县集中供热管道工程四条管线项目供热管道工程/拦标价清单");
 
-        companies.add(new GCbillOfQuantities("陕西鼎固", "C:\\Users\\Administrator\\Desktop\\西安外国语大学支线供热管道工程\\陕西鼎固清单计价表和工程量清单"));
-        companies.add(new GCbillOfQuantities("陕西航天", "C:\\Users\\Administrator\\Desktop\\西安外国语大学支线供热管道工程\\陕西航天建筑清单计价表和工程量清单"));
-        companies.add(new GCbillOfQuantities("太原安装", "C:\\Users\\Administrator\\Desktop\\西安外国语大学支线供热管道工程\\太原安装清单计价表和工程量清单"));
-//        companies.add(new GCbillOfQuantities("亚玄", "C:\\Users\\Administrator\\Desktop\\大荔县集中供热管道工程四条管线项目供热管道工程\\亚玄"));
+        companies.add(new GCbillOfQuantities("荣盛", "/Users/liuyang/Desktop/ExcelPick/大荔县集中供热管道工程四条管线项目供热管道工程/荣盛"));
+        companies.add(new GCbillOfQuantities("陕西正大", "/Users/liuyang/Desktop/ExcelPick/大荔县集中供热管道工程四条管线项目供热管道工程/陕西正大"));
+        companies.add(new GCbillOfQuantities("江豪", "/Users/liuyang/Desktop/ExcelPick/大荔县集中供热管道工程四条管线项目供热管道工程/江豪"));
+        companies.add(new GCbillOfQuantities("亚玄", "/Users/liuyang/Desktop/ExcelPick/大荔县集中供热管道工程四条管线项目供热管道工程/亚玄"));
 
         if (blockPriceList.getQuantitiesList().size()> number ){
               GCchecklist =  pick(blockPriceList.getQuantitiesList().size() , number);
@@ -49,7 +49,7 @@ public class main {
             GCUnitPrice = summerizeUnitPrice();
             GCUnitpoints = calculatePoint();
             List<Double> summe = summerizePoint();
-            exportAll("C:\\Users\\Administrator\\Desktop\\西安外国语大学支线供热管道工程\\汇总.xlsx");
+            exportAll("/Users/liuyang/Desktop/ExcelPick/大荔县集中供热管道工程四条管线项目供热管道工程/汇总.xlsx");
 
 //            System.out.println("SUMME："+ Arrays.toString(summe.toArray()));
         }
