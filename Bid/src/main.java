@@ -1,5 +1,6 @@
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.DecimalFormat;
@@ -73,9 +74,11 @@ public class main extends javax.swing.JFrame {
         compTable = new javax.swing.JTable();
         jButton4 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         Result = new javax.swing.JFrame();
         resultdisplay = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
 
@@ -254,20 +257,34 @@ public class main extends javax.swing.JFrame {
             }
         });
 
+        jButton3.setText("导出工程量清单抽取表");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                try {
+                    jButton3ActionPerformed(evt);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
         javax.swing.GroupLayout CompanyConfigLayout = new javax.swing.GroupLayout(CompanyConfig.getContentPane());
         CompanyConfig.getContentPane().setLayout(CompanyConfigLayout);
         CompanyConfigLayout.setHorizontalGroup(
             CompanyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CompanyConfigLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton4)
-                .addGap(59, 59, 59))
             .addGroup(CompanyConfigLayout.createSequentialGroup()
                 .addGap(38, 38, 38)
-                .addComponent(Save, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addGroup(CompanyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(CompanyConfigLayout.createSequentialGroup()
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton4)
+                        .addGap(59, 59, 59))
+                    .addGroup(CompanyConfigLayout.createSequentialGroup()
+                        .addComponent(Save, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(34, Short.MAX_VALUE))))
         );
         CompanyConfigLayout.setVerticalGroup(
             CompanyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -277,7 +294,8 @@ public class main extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(CompanyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton4)
-                    .addComponent(jButton10))
+                    .addComponent(jButton10)
+                    .addComponent(jButton3))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
 
@@ -294,6 +312,13 @@ public class main extends javax.swing.JFrame {
             }
         });
 
+        jButton11.setText("下一个工程");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout ResultLayout = new javax.swing.GroupLayout(Result.getContentPane());
         Result.getContentPane().setLayout(ResultLayout);
         ResultLayout.setHorizontalGroup(
@@ -301,7 +326,9 @@ public class main extends javax.swing.JFrame {
             .addGroup(ResultLayout.createSequentialGroup()
                 .addGroup(ResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ResultLayout.createSequentialGroup()
-                        .addGap(260, 260, 260)
+                        .addGap(79, 79, 79)
+                        .addComponent(jButton11)
+                        .addGap(94, 94, 94)
                         .addComponent(jButton5))
                     .addGroup(ResultLayout.createSequentialGroup()
                         .addContainerGap()
@@ -314,7 +341,9 @@ public class main extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(resultdisplay, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton5)
+                .addGroup(ResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton5)
+                    .addComponent(jButton11))
                 .addGap(19, 19, 19))
         );
 
@@ -447,6 +476,8 @@ public class main extends javax.swing.JFrame {
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         number = Integer.valueOf(numberLabel.getText())<=blockPriceList.getQuantitiesList().size()? Integer.valueOf(numberLabel.getText()):blockPriceList.getQuantitiesList().size();
+        GCchecklist =  pick(blockPriceList.getQuantitiesList().size() , number);
+        companies = new ArrayList<GCbillOfQuantities>();
         this.clearTableContent(compTable);
         this.transactFromAtoB(GCFolder, CompanyConfig);
     }//GEN-LAST:event_jButton7ActionPerformed
@@ -461,7 +492,7 @@ public class main extends javax.swing.JFrame {
        try {
        resultdisplay.setText("正在生成Excel，正在保存结果......");
        
-       GCchecklist =  pick(blockPriceList.getQuantitiesList().size() , number);
+
        GCUnitPrice = summerizeUnitPrice();
        GCUnitpoints = calculatePoint();
        String savepath = GCPath.getText()+"/汇总.xlsx";
@@ -470,7 +501,7 @@ public class main extends javax.swing.JFrame {
            exportAll(savepath);
            resultdisplay.setText("正在生成Excel，正在保存结果......");
                 Thread.sleep(1000);
-                resultdisplay.setText("保存完成！\n文件保存在："+GCPath.getText()+"----> 汇总.xlsx");
+                resultdisplay.setText("保存完成！\n");
             } catch (InterruptedException e) {
             } catch (IOException ex) {
             Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
@@ -480,6 +511,20 @@ public class main extends javax.swing.JFrame {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) throws IOException {//GEN-FIRST:event_jButton3ActionPerformed
+        String savepath = GCPath.getText()+"/工程量清单抽取表.xlsx";
+        exportclist(savepath);
+
+        String message = "已保存工程量清单抽取表！";
+        JOptionPane.showMessageDialog(this, message);
+        
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        this.transactFromAtoB(Result, GCFolder);
+        
+    }//GEN-LAST:event_jButton11ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -527,7 +572,9 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JTable compTable;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
@@ -689,7 +736,7 @@ public class main extends javax.swing.JFrame {
     }
 
     public static void exportAll(String path) throws IOException {
-
+        wb = new XSSFWorkbook();
         exportblockPrice(blockPriceList);
         for (GCbillOfQuantities bq : companies) {
             exportBillOfQuantities(bq);
@@ -703,6 +750,10 @@ public class main extends javax.swing.JFrame {
         output.close();
 
     }
+
+
+
+
 
  ///////输出拦标价单项
      private  static  Sheet exportblockPrice(GCblockPriceQuantities bq){
@@ -806,20 +857,30 @@ public class main extends javax.swing.JFrame {
         }
         return sh;
     }
+
+
+    private static void exportclist(String path) throws IOException {
+        wb = new XSSFWorkbook();
+        exportchecklist(main.GCchecklist);
+        File file = new File(path);
+        FileOutputStream output = new FileOutputStream(file);
+        wb.write(output);
+        output.close();
+
+
+    }
 //筛选表
     private static Sheet exportchecklist(List<Integer> checklist){
+
         Sheet sh = wb.createSheet("工程量清单抽取表");
         CellStyle style = wb.createCellStyle();
         style.setAlignment(XSSFCellStyle.ALIGN_CENTER);
 
-        
         int initRow = 0;
-        
         Row title = sh.createRow(initRow++);
         Cell t = title.createCell(0);
         t.setCellValue(main.BidName);
-        
-        
+
         Row row = sh.createRow(initRow++);
         Cell cell ;
         int x = 0;
@@ -940,18 +1001,6 @@ public class main extends javax.swing.JFrame {
         return sh;
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
 
 
 

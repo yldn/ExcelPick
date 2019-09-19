@@ -1,88 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6a346468-d367-4f7b-98b5-6ee6666f9a32" name="Default Changelist" comment="" />
-    <ignored path="$PROJECT_DIR$/out/" />
+    <list default="true" id="6a346468-d367-4f7b-98b5-6ee6666f9a32" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/FileExtractor.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/FileExtractor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/GCItemQuantities.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/GCItemQuantities.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/GCbillOfQuantities.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/GCbillOfQuantities.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/GCblockPriceItemQuantities.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/GCblockPriceItemQuantities.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/GCblockPriceQuantities.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/GCblockPriceQuantities.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main$10.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main$11.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main$12.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main$12.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main_1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main_1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main_1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main_1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/build-impl.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/build-impl.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/genfiles.properties" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/genfiles.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/private/private.properties" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/private/private.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/private/private.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/private/private.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/project.properties" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/project.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Bid/GCbillOfQuantities.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Bid/GCbillOfQuantities.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Bid/GCblockPriceQuantities.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Bid/GCblockPriceQuantities.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Bid/main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Bid/main$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Bid/main$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Bid/main$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Bid/main$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Bid/main$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Bid/main$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Bid/main$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Bid/main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Bid/main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Bid/main_1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Bid/main_1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GCbillOfQuantities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GCbillOfQuantities.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GCblockPriceQuantities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GCblockPriceQuantities.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../西北工业大学二期供热专线工程/拦标价清单/西北工业大学二期供热专线工程/西北工业大学二期供热专线工程—土建工程/西北工业大学二期供热专线工程—土建工程.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../西北工业大学二期供热专线工程/拦标价清单/西北工业大学二期供热专线工程/西北工业大学二期供热专线工程—安装工程/西北工业大学二期供热专线工程—安装工程.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../西安外国语大学支线供热管道工程/拦标价清单/西安外国语大学支线供热管道工程-土建工程清单.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../西安外国语大学支线供热管道工程/拦标价清单/西安外国语大学支线供热管道工程—安装工程清单.xlsx" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="350751764">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="3" />
-          <entry key="project.open.time.11" value="1" />
-          <entry key="project.open.time.2" value="1" />
-          <entry key="project.open.time.5" value="1" />
-          <entry key="project.opened" value="3" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="java" value="3" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="JAVA" value="3" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="java" value="4" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="4" />
-        </counts>
-      </usages-collector>
-    </session>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/FileExtractor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="509">
-              <caret line="331" column="4" lean-forward="true" selection-start-line="331" selection-start-column="4" selection-end-line="331" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main_1.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4935">
-              <caret line="342" column="14" selection-start-line="342" selection-start-column="14" selection-end-line="342" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/main_1.java" />
-        <option value="$PROJECT_DIR$/src/main.java" />
-      </list>
-    </option>
-  </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
     <exe-path />
@@ -90,15 +63,7 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1280" />
-    <option name="height" value="704" />
-  </component>
+  <component name="ProjectId" id="1R2LlodEnVaYCaFdq2TbE9qaD3u" />
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
       <profile-state>
@@ -166,35 +131,13 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Bid" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Bid" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Bid" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Bid" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-    </panes>
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1568536682544" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
@@ -237,74 +180,26 @@
       <updated>1568536378715</updated>
       <workItem from="1568536382317" duration="311000" />
       <workItem from="1568606024053" duration="220000" />
+      <workItem from="1568860400228" duration="2240000" />
+      <workItem from="1568863623658" duration="14807000" />
     </task>
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="531000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="704" extended-state="0" />
-    <editor active="true" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25767368" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32843137" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="11" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Database" order="5" />
-      <window_info anchor="right" id="Theme Preview" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Maven Projects" order="8" />
-    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main_1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4935">
-          <caret line="342" column="14" selection-start-line="342" selection-start-column="14" selection-end-line="342" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
-          <caret line="331" column="4" lean-forward="true" selection-start-line="331" selection-start-column="4" selection-end-line="331" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/FileExtractor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="masterDetails">
     <states>

@@ -53,33 +53,76 @@ public class GCblockPriceQuantities implements GCList {
     private List<GCblockPriceItemQuantities> parseItemQuantity(List<File> listPath) {
 
         List<GCblockPriceItemQuantities> quantityList = new ArrayList<GCblockPriceItemQuantities>();
+
+
+
         for (File f : listPath) {
             Workbook wb = readExcel(f.getPath());
             if (wb != null) {
-                Sheet sheet = wb.getSheetAt(0);
-                String GCname = sheet.getRow(1).getCell(0).getRichStringCellValue().toString();
+                Sheet sheet = wb.getSheet("表-2 分部分项工程量清单");
+//                String GCname = sheet.getRow(1).getCell(0).getRichStringCellValue().toString();
+                String GCname = f.getName();
+                int dot = GCname.lastIndexOf('.');
+                GCname = GCname.substring(0, dot);
 //                System.out.println(GCname);
-                //从表1 第五行查起一直到 physicalnumberofRows
-                for (int i = 4; i < sheet.getPhysicalNumberOfRows(); i++) {
-                    if (sheet.getRow(i).getCell(0) != null && sheet.getRow(i).getCell(0).getCellType() == Cell.CELL_TYPE_NUMERIC) {
-                        Row row = sheet.getRow(i);
 
-                        int serialNumber = (int) row.getCell(0).getNumericCellValue();
-                        String itemCode = row.getCell(1).getRichStringCellValue().toString();
-                        String itemName = row.getCell(2).getRichStringCellValue().toString();
-                        String unit = row.getCell(4).getRichStringCellValue().toString();
-                        double gcQuantities = row.getCell(6).getNumericCellValue();
 
-                        GCblockPriceItemQuantities itemQuantities = new GCblockPriceItemQuantities(GCname, serialNumber, itemCode, itemName, unit, gcQuantities);
+                if (sheet.getRow(0).getCell(0).getRichStringCellValue().toString().length() <=2) {
+                    //从表1 第1行查起一直到 physicalnumberofRows
+                    for (int i = 0; i < sheet.getPhysicalNumberOfRows(); i++) {
+                        if (sheet.getRow(i).getCell(0) != null && sheet.getRow(i).getCell(0).getCellType() == Cell.CELL_TYPE_NUMERIC) {
+                            Row row = sheet.getRow(i);
+
+                            int serialNumber = (int) row.getCell(0).getNumericCellValue();
+                            String itemCode = row.getCell(1).getRichStringCellValue().toString();
+                            String itemName = row.getCell(2).getRichStringCellValue().toString();
+                            String unit = row.getCell(3).getRichStringCellValue().toString();
+                            double gcQuantities = row.getCell(4).getNumericCellValue();
+
+                            GCblockPriceItemQuantities itemQuantities = new GCblockPriceItemQuantities(GCname, serialNumber, itemCode, itemName, unit, gcQuantities);
 //                        System.out.println(itemQuantities.toString());
-                        quantityList.add(itemQuantities);
+                            quantityList.add(itemQuantities);
 //                        System.out.println(itemQuantities.toString());
+                        }
+                    }
+                }else
+                {
+                    for (int i = 3; i < sheet.getPhysicalNumberOfRows(); i++) {
+                        if (sheet.getRow(i).getCell(0) != null && sheet.getRow(i).getCell(0).getCellType() == Cell.CELL_TYPE_NUMERIC) {
+
+                            Row row = sheet.getRow(i);
+                            int serialNumber = (int)row.getCell(0).getNumericCellValue();
+                            String itemCode = row.getCell(1).getRichStringCellValue().toString();
+                            String itemName = row.getCell(2).getRichStringCellValue().toString();
+//                        System.out.println(serialNumber);
+                            String unit = row.getCell(4).getRichStringCellValue().toString();
+                            double gcQuantities = row.getCell(6).getNumericCellValue();
+
+                            GCblockPriceItemQuantities itemQuantities = new GCblockPriceItemQuantities(GCname, serialNumber, itemCode, itemName, unit, gcQuantities);
+//                        System.out.println(itemQuantities.toString());
+                            quantityList.add(itemQuantities);
+//                        System.out.println(itemQuantities.toString());
+                        }
                     }
                 }
 
             }
 
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         return quantityList;
     }
 }

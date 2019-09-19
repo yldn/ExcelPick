@@ -62,37 +62,66 @@ public class GCbillOfQuantities implements GCList{
         for (File f : listPath){
             Workbook wb = readExcel(f.getPath());
             if (wb != null){
-                Sheet sheet = wb.getSheetAt(0);
+                Sheet sheet = wb.getSheet("表-2 分部分项工程量清单计价表");
 
-                String GCname = sheet.getRow(1).getCell(0).getRichStringCellValue().toString();
+//                String GCname = sheet.getRow(1).getCell(0).getRichStringCellValue().toString();
+                String GCname = f.getName();
 //                System.out.println(GCname);
 
-                //从表1 第五行查起一直到 physicalnumberofRows
-                for (int i  = 5 ; i< sheet.getPhysicalNumberOfRows();i++){
-                    if(sheet.getRow(i).getCell(0)!= null && sheet.getRow(i).getCell(0).getCellType() == Cell.CELL_TYPE_NUMERIC){
-                        Row row = sheet.getRow(i);
-                        int serialNumber = (int)row.getCell(0).getNumericCellValue();
-                        String itemCode = row.getCell(1).getRichStringCellValue().toString();
-                        String itemName = row.getCell(2).getRichStringCellValue().toString();
-                        String unit = row.getCell(4).getRichStringCellValue().toString();
-                        double gcQuantities = row.getCell(5).getNumericCellValue();
-                        double unitPrice;
-                        if(row.getCell(6) != null){
-                            unitPrice = row.getCell(6).getNumericCellValue()  ;
+                if (sheet.getRow(0).getCell(0).getRichStringCellValue().toString().length() <=2) {
+                    //从表1 第1行查起一直到 physicalnumberofRows
+                    for (int i = 0; i < sheet.getPhysicalNumberOfRows(); i++) {
+                        if (sheet.getRow(i).getCell(0) != null && sheet.getRow(i).getCell(0).getCellType() == Cell.CELL_TYPE_NUMERIC) {
+                            Row row = sheet.getRow(i);
+                            int serialNumber = (int) row.getCell(0).getNumericCellValue();
+                            String itemCode = row.getCell(1).getRichStringCellValue().toString();
+                            String itemName = row.getCell(2).getRichStringCellValue().toString();
+//                        System.out.println(serialNumber);
+                            String unit = row.getCell(3).getRichStringCellValue().toString();
+                            double gcQuantities = row.getCell(4).getNumericCellValue();
+                            double unitPrice;
+                            if (row.getCell(5) != null) {
+                                unitPrice = row.getCell(5).getNumericCellValue();
+                            } else
+                                unitPrice = 0;
+
+                            double comboPrice;
+                            if (row.getCell(6) != null) {
+                                comboPrice = row.getCell(6).getNumericCellValue();
+                            } else
+                                comboPrice = 0;
+
+                            GCItemQuantities itemQuantities = new GCItemQuantities(GCname, serialNumber, itemCode, itemName, unit, gcQuantities, unitPrice, comboPrice);
+
+                            quantityList.add(itemQuantities);
                         }
-                        else
-                            unitPrice = 0;
+                    }
+                }else {
+                    for (int i = 3; i < sheet.getPhysicalNumberOfRows(); i++) {
+                        if (sheet.getRow(i).getCell(0) != null && sheet.getRow(i).getCell(0).getCellType() == Cell.CELL_TYPE_NUMERIC) {
+                            Row row = sheet.getRow(i);
+                            int serialNumber = (int) row.getCell(0).getNumericCellValue();
+                            String itemCode = row.getCell(1).getRichStringCellValue().toString();
+                            String itemName = row.getCell(2).getRichStringCellValue().toString();
+//                        System.out.println(serialNumber);
+                            String unit = row.getCell(4).getRichStringCellValue().toString();
+                            double gcQuantities = row.getCell(5).getNumericCellValue();
+                            double unitPrice;
+                            if (row.getCell(6) != null) {
+                                unitPrice = row.getCell(6).getNumericCellValue();
+                            } else
+                                unitPrice = 0;
 
-                        double comboPrice ;
-                        if(row.getCell(8) != null){
-                            comboPrice = row.getCell(8).getNumericCellValue()  ;
+                            double comboPrice;
+                            if (row.getCell(8) != null) {
+                                comboPrice = row.getCell(8).getNumericCellValue();
+                            } else
+                                comboPrice = 0;
+
+                            GCItemQuantities itemQuantities = new GCItemQuantities(GCname, serialNumber, itemCode, itemName, unit, gcQuantities, unitPrice, comboPrice);
+
+                            quantityList.add(itemQuantities);
                         }
-                        else
-                            comboPrice = 0;
-
-                        GCItemQuantities itemQuantities = new GCItemQuantities(GCname,serialNumber,itemCode,itemName,unit,gcQuantities,unitPrice,comboPrice);
-
-                        quantityList.add(itemQuantities);
                     }
                 }
             }
