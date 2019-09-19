@@ -298,23 +298,24 @@ public class main extends javax.swing.JFrame {
         Result.getContentPane().setLayout(ResultLayout);
         ResultLayout.setHorizontalGroup(
             ResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ResultLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(resultdisplay, javax.swing.GroupLayout.DEFAULT_SIZE, 556, Short.MAX_VALUE)
-                .addGap(121, 121, 121))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ResultLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton5)
-                .addGap(16, 16, 16))
+            .addGroup(ResultLayout.createSequentialGroup()
+                .addGroup(ResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ResultLayout.createSequentialGroup()
+                        .addGap(260, 260, 260)
+                        .addComponent(jButton5))
+                    .addGroup(ResultLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(resultdisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 585, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
         ResultLayout.setVerticalGroup(
             ResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ResultLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(resultdisplay, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
+                .addComponent(resultdisplay, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton5)
-                .addGap(14, 14, 14))
+                .addGap(19, 19, 19))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -419,7 +420,8 @@ public class main extends javax.swing.JFrame {
        if(f.isDirectory()){
 //        System.out.println("文件夹:"+file.getAbsolutePath());
         GCPath.setText(f.getAbsolutePath());
-        
+        main.BidName = f.getName();
+        System.out.println(main.BidName);
        }else if(f.isFile()){
         String message = "必须为文件夹！";
         JOptionPane.showMessageDialog(this, message);
@@ -445,11 +447,13 @@ public class main extends javax.swing.JFrame {
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         number = Integer.valueOf(numberLabel.getText())<=blockPriceList.getQuantitiesList().size()? Integer.valueOf(numberLabel.getText()):blockPriceList.getQuantitiesList().size();
+        this.clearTableContent(compTable);
         this.transactFromAtoB(GCFolder, CompanyConfig);
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-       this.transactFromAtoB(CompanyConfig, GCFolder);
+       companies.clear();
+        this.transactFromAtoB(CompanyConfig, GCFolder);
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -559,6 +563,8 @@ public class main extends javax.swing.JFrame {
     
     static Workbook wb = new XSSFWorkbook();
     static int number = 30 ;
+    
+    static String BidName = "";
     
     
     private void transactFromAtoB(JFrame A,JFrame B){
@@ -703,31 +709,39 @@ public class main extends javax.swing.JFrame {
          Sheet sh = wb.createSheet(bq.getName());
          CellStyle style = wb.createCellStyle();
          style.setAlignment(XSSFCellStyle.ALIGN_CENTER);
-
-         Row row = sh.createRow(0);
+         int initRow = 0;
+         //生成标题
+         Row title = sh.createRow(initRow++);
+         Cell t = title.createCell(0);
+         t.setCellValue(main.BidName);
+         
+         
+         
+         Row row = sh.createRow(initRow++);
          Cell cell ;
-         cell = row.createCell(0);
+         int x =0;
+         cell = row.createCell(x++);
          cell.setCellValue("工程名称");
          cell.setCellStyle(style);
-         cell = row.createCell(1);
+         cell = row.createCell(x++);
          cell.setCellValue("序号");
          cell.setCellStyle(style);
-         cell = row.createCell(2);
+         cell = row.createCell(x++);
          cell.setCellValue("项目编码");
          cell.setCellStyle(style);
-         cell = row.createCell(3);
+         cell = row.createCell(x++);
          cell.setCellValue("项目名称");
          cell.setCellStyle(style);
-         cell = row.createCell(4);
+         cell = row.createCell(x++);
          cell.setCellValue("计量单位");
          cell.setCellStyle(style);
-         cell = row.createCell(5);
+         cell = row.createCell(x++);
          cell.setCellValue("工程数量");
          cell.setCellStyle(style);
 
 
          for (int i = 0; i < bq.getQuantitiesList().size(); i++) {
-             row = sh.createRow(i+1);
+             row = sh.createRow(initRow++);
              GCblockPriceItemQuantities item = bq.getQuantitiesList().get(i);
              row.createCell(0).setCellValue(item.getGCname());
              row.createCell(1).setCellValue(item.getSerialNumber());
@@ -792,35 +806,44 @@ public class main extends javax.swing.JFrame {
         }
         return sh;
     }
-
+//筛选表
     private static Sheet exportchecklist(List<Integer> checklist){
-        Sheet sh = wb.createSheet("筛选表");
+        Sheet sh = wb.createSheet("工程量清单抽取表");
         CellStyle style = wb.createCellStyle();
         style.setAlignment(XSSFCellStyle.ALIGN_CENTER);
 
-        Row row = sh.createRow(0);
+        
+        int initRow = 0;
+        
+        Row title = sh.createRow(initRow++);
+        Cell t = title.createCell(0);
+        t.setCellValue(main.BidName);
+        
+        
+        Row row = sh.createRow(initRow++);
         Cell cell ;
-        cell = row.createCell(0);
+        int x = 0;
+        cell = row.createCell(x++);
         cell.setCellValue("工程名称");
         cell.setCellStyle(style);
-        cell = row.createCell(1);
+        cell = row.createCell(x++);
         cell.setCellValue("序号");
         cell.setCellStyle(style);
-        cell = row.createCell(2);
+        cell = row.createCell(x++);
         cell.setCellValue("项目编码");
         cell.setCellStyle(style);
-        cell = row.createCell(3);
+        cell = row.createCell(x++);
         cell.setCellValue("项目名称");
         cell.setCellStyle(style);
-        cell = row.createCell(4);
+        cell = row.createCell(x++);
         cell.setCellValue("计量单位");
         cell.setCellStyle(style);
-        cell = row.createCell(5);
+        cell = row.createCell(x++);
         cell.setCellValue("工程数量");
         cell.setCellStyle(style);
 
         for (int i = 0; i < checklist.size(); i++) {
-            row = sh.createRow(i+1);
+            row = sh.createRow(initRow++);
             GCblockPriceItemQuantities item = blockPriceList.getQuantitiesList().get(checklist.get(i));
             row.createCell(0).setCellValue(item.getGCname());
             row.createCell(1).setCellValue(item.getSerialNumber());
@@ -838,24 +861,37 @@ public class main extends javax.swing.JFrame {
         CellStyle style = wb.createCellStyle();
         style.setAlignment(XSSFCellStyle.ALIGN_CENTER);
 
-        Row row = sh.createRow(0);
+        
+        int initRow = 0;
+         Row title = sh.createRow(initRow++);
+         int start = 0;
+         Cell t = title.createCell(0+start);
+         t.setCellValue(main.BidName);
+         
+        for(GCbillOfQuantities x : companies){
+            t = title.createCell(6+start++);
+            t.setCellValue(x.getName());
+        } 
+        
+        Row row = sh.createRow(initRow++);
         Cell cell ;
-        cell = row.createCell(0);
+        int x = 0;
+        cell = row.createCell(x++);
         cell.setCellValue("工程名称");
         cell.setCellStyle(style);
-        cell = row.createCell(1);
+        cell = row.createCell(x++);
         cell.setCellValue("序号");
         cell.setCellStyle(style);
-        cell = row.createCell(2);
+        cell = row.createCell(x++);
         cell.setCellValue("项目编码");
         cell.setCellStyle(style);
-        cell = row.createCell(3);
+        cell = row.createCell(x++);
         cell.setCellValue("项目名称");
         cell.setCellStyle(style);
-        cell = row.createCell(4);
+        cell = row.createCell(x++);
         cell.setCellValue("计量单位");
         cell.setCellStyle(style);
-        cell = row.createCell(5);
+        cell = row.createCell(x++);
         cell.setCellValue("工程数量");
         cell.setCellStyle(style);
         //公司名字
