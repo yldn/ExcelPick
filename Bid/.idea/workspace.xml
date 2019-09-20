@@ -2,50 +2,47 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6a346468-d367-4f7b-98b5-6ee6666f9a32" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/FileExtractor.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/FileExtractor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/GCItemQuantities.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/GCItemQuantities.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/GCbillOfQuantities.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/GCbillOfQuantities.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/GCblockPriceItemQuantities.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/GCblockPriceItemQuantities.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/GCblockPriceQuantities.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/GCblockPriceQuantities.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/main$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main$10.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/main$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main$11.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/main$12.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main$12.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main$13.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main$13.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main$14.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main$14.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/main$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main$9.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/main.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main_1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main_1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main_1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main_1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbproject/build-impl.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/build-impl.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbproject/genfiles.properties" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/genfiles.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbproject/private/private.properties" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/private/private.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbproject/private/private.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/private/private.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbproject/project.properties" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/project.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbproject/project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Bid/GCbillOfQuantities.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Bid/GCbillOfQuantities.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Bid/GCblockPriceQuantities.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Bid/GCblockPriceQuantities.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Bid/main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Bid/main$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Bid/main$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Bid/main$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Bid/main$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Bid/main$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Bid/main$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Bid/main$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main.form" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Bid/main$13.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Bid/main$13.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Bid/main$14.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Bid/main$14.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Bid/main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Bid/main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Bid/main_1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Bid/main_1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GCbillOfQuantities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GCbillOfQuantities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GCblockPriceQuantities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GCblockPriceQuantities.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../西北工业大学二期供热专线工程/拦标价清单/西北工业大学二期供热专线工程/西北工业大学二期供热专线工程—土建工程/西北工业大学二期供热专线工程—土建工程.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../西北工业大学二期供热专线工程/拦标价清单/西北工业大学二期供热专线工程/西北工业大学二期供热专线工程—安装工程/西北工业大学二期供热专线工程—安装工程.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../西安外国语大学支线供热管道工程/拦标价清单/西安外国语大学支线供热管道工程-土建工程清单.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../西安外国语大学支线供热管道工程/拦标价清单/西安外国语大学支线供热管道工程—安装工程清单.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IJrepo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../IJrepo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../大荔县集中供热管道工程四条管线项目供热管道工程/拦标价清单/东环路（洛滨大道-碧桂园同州首府）主线供热管道工程D377/东环路（洛滨大道-碧桂园同州首府）主线供热管道工程-土建工程/东环路（洛滨大道-碧桂园同州首府）主线供热管道工程-土建工程.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../大荔县集中供热管道工程四条管线项目供热管道工程/拦标价清单/东环路（洛滨大道-碧桂园同州首府）主线供热管道工程D377/东环路（洛滨大道-碧桂园同州首府）主线供热管道工程-安装工程/东环路（洛滨大道-碧桂园同州首府）主线供热管道工程-安装工程.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../大荔县集中供热管道工程四条管线项目供热管道工程/拦标价清单/南环路（南大街-西二环）主线供热管道工程D108/南环路（南大街-西二环）主线供热管道工程-土建工程/南环路（南大街-西二环）主线供热管道工程-土建工程.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../大荔县集中供热管道工程四条管线项目供热管道工程/拦标价清单/南环路（南大街-西二环）主线供热管道工程D108/南环路（南大街-西二环）主线供热管道工程-安装工程/南环路（南大街-西二环）主线供热管道工程-安装工程.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../大荔县集中供热管道工程四条管线项目供热管道工程/拦标价清单/南环路（南大街-西二环）主线供热管道工程D133/南环路（南大街-西二环）主线供热管道工程-土建工程/南环路（南大街-西二环）主线供热管道工程-土建工程.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../大荔县集中供热管道工程四条管线项目供热管道工程/拦标价清单/南环路（南大街-西二环）主线供热管道工程D133/南环路（南大街-西二环）主线供热管道工程-安装工程/南环路（南大街-西二环）主线供热管道工程-安装工程.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../大荔县集中供热管道工程四条管线项目供热管道工程/拦标价清单/南环路（南大街-西二环）主线供热管道工程D219/南环路（南大街-西二环）主线供热管道工程-土建工程/南环路（南大街-西二环）主线供热管道工程-土建工程.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../大荔县集中供热管道工程四条管线项目供热管道工程/拦标价清单/南环路（南大街-西二环）主线供热管道工程D219/南环路（南大街-西二环）主线供热管道工程-安装工程/南环路（南大街-西二环）主线供热管道工程-安装工程.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../大荔县集中供热管道工程四条管线项目供热管道工程/拦标价清单/南环路（南大街-西二环）主线供热管道工程D325/南环路（南大街-西二环）主线供热管道工程-土建工程/南环路（南大街-西二环）主线供热管道工程-土建工程.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../大荔县集中供热管道工程四条管线项目供热管道工程/拦标价清单/南环路（南大街-西二环）主线供热管道工程D325/南环路（南大街-西二环）主线供热管道工程-安装工程/南环路（南大街-西二环）主线供热管道工程-安装工程.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../大荔县集中供热管道工程四条管线项目供热管道工程/拦标价清单/南环路（南大街-西二环）主线供热管道工程D76/南环路（南大街-西二环）主线供热管道工程-土建工程/南环路（南大街-西二环）主线供热管道工程-土建工程.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../大荔县集中供热管道工程四条管线项目供热管道工程/拦标价清单/南环路（南大街-西二环）主线供热管道工程D76/南环路（南大街-西二环）主线供热管道工程-安装工程/南环路（南大街-西二环）主线供热管道工程-安装工程.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../大荔县集中供热管道工程四条管线项目供热管道工程/拦标价清单/南环路（南大街-西二环）主线供热管道工程D89/南环路（南大街-西二环）主线供热管道工程-土建工程/南环路（南大街-西二环）主线供热管道工程-土建工程.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../大荔县集中供热管道工程四条管线项目供热管道工程/拦标价清单/南环路（南大街-西二环）主线供热管道工程D89/南环路（南大街-西二环）主线供热管道工程-安装工程/南环路（南大街-西二环）主线供热管道工程-安装工程.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../大荔县集中供热管道工程四条管线项目供热管道工程/拦标价清单/碧桂园同州首府支线供热管道工程D273/碧桂园同州首府支线供热管道工程-土建工程/碧桂园同州首府支线供热管道工程-土建工程.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../大荔县集中供热管道工程四条管线项目供热管道工程/拦标价清单/碧桂园同州首府支线供热管道工程D273/碧桂园同州首府支线供热管道工程-安装工程/碧桂园同州首府支线供热管道工程-安装工程.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../大荔县集中供热管道工程四条管线项目供热管道工程/拦标价清单/花城路西段（西三环-市场二路）主线供热管道工程D159/花城路西段（西三环-市场二路）主线供热管道工程-土建工程/花城路西段（西三环-市场二路）主线供热管道工程-土建工程.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../大荔县集中供热管道工程四条管线项目供热管道工程/拦标价清单/花城路西段（西三环-市场二路）主线供热管道工程D159/花城路西段（西三环-市场二路）主线供热管道工程-安装工程/花城路西段（西三环-市场二路）主线供热管道工程-安装工程.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../大荔县集中供热管道工程四条管线项目供热管道工程/拦标价清单/花城路西段（西三环-市场二路）主线供热管道工程D273/花城路西段（西三环-市场二路）主线供热管道工程-土建工程/花城路西段（西三环-市场二路）主线供热管道工程-土建工程.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../大荔县集中供热管道工程四条管线项目供热管道工程/拦标价清单/花城路西段（西三环-市场二路）主线供热管道工程D273/花城路西段（西三环-市场二路）主线供热管道工程-安装工程/花城路西段（西三环-市场二路）主线供热管道工程-安装工程.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../西北工业大学二期供热专线工程/工程量清单/西北工业大学二期供热专线工程/西北工业大学二期供热专线工程—土建工程/西北工业大学二期供热专线工程—土建工程.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/../西北工业大学二期供热专线工程/工程量清单/西北工业大学二期供热专线工程/西北工业大学二期供热专线工程—土建工程/西北工业大学二期供热专线工程—土建工程.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../西北工业大学二期供热专线工程/工程量清单/西北工业大学二期供热专线工程/西北工业大学二期供热专线工程—安装工程/西北工业大学二期供热专线工程—安装工程.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/../西北工业大学二期供热专线工程/工程量清单/西北工业大学二期供热专线工程/西北工业大学二期供热专线工程—安装工程/西北工业大学二期供热专线工程—安装工程.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../西北工业大学二期供热专线工程/工程量清单抽取表.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../西北工业大学二期供热专线工程/汇总.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../西北工业大学二期供热专线工程/甘肃安装/西北工业大学二期供热专线工程/西北工业大学二期供热专线工程—土建工程/西北工业大学二期供热专线工程—土建工程.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../西北工业大学二期供热专线工程/甘肃安装/西北工业大学二期供热专线工程/西北工业大学二期供热专线工程—安装工程/西北工业大学二期供热专线工程—安装工程.xlsx" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

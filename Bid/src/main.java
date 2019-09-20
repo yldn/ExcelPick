@@ -84,7 +84,7 @@ public class main extends javax.swing.JFrame {
 
         GCFolder.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         GCFolder.setTitle("配置工程");
-        GCFolder.setSize(new java.awt.Dimension(700, 360));
+        GCFolder.setSize(new java.awt.Dimension(750, 360));
 
         jLabel3.setText("工程文件夹路径：");
 
@@ -109,9 +109,9 @@ public class main extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setText("拦标价：");
+        jLabel4.setText("工程量清单：");
 
-        jButton9.setText("选择拦标价文件夹");
+        jButton9.setText("选择工程量文件夹");
         jButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton9ActionPerformed(evt);
@@ -159,7 +159,7 @@ public class main extends javax.swing.JFrame {
                                     .addComponent(jButton6)
                                     .addGap(18, 18, 18)
                                     .addComponent(jButton7))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)))
                 .addGap(13, 13, 13))
         );
         GCFolderLayout.setVerticalGroup(
@@ -181,7 +181,7 @@ public class main extends javax.swing.JFrame {
                 .addGroup(GCFolderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(blockPriceDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(numberLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                 .addGroup(GCFolderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton6)
                     .addComponent(jButton7))
@@ -384,7 +384,8 @@ public class main extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    // </editor-fold>//GEN-END:initComponents
+    }
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        this.transactFromAtoB(this, GCFolder);
@@ -446,15 +447,17 @@ public class main extends javax.swing.JFrame {
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
        File f = this.selectFile("");
-       if(f.isDirectory()){
-//        System.out.println("文件夹:"+file.getAbsolutePath());
-        GCPath.setText(f.getAbsolutePath());
-        main.BidName = f.getName();
-        System.out.println(main.BidName);
-       }else if(f.isFile()){
-        String message = "必须为文件夹！";
-        JOptionPane.showMessageDialog(this, message);
-//        System.out.println("文件:"+file.getAbsolutePath());
+       if(!f.equals(null)){
+            if(f.isDirectory()){
+     //        System.out.println("文件夹:"+file.getAbsolutePath());
+             GCPath.setText(f.getAbsolutePath());
+             main.BidName = f.getName();
+             System.out.println(main.BidName);
+            }else if(f.isFile()){
+             String message = "必须为文件夹！";
+             JOptionPane.showMessageDialog(this, message);
+     //        System.out.println("文件:"+file.getAbsolutePath());
+            }
        }
     }//GEN-LAST:event_jButton8ActionPerformed
 

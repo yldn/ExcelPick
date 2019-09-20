@@ -7,7 +7,7 @@
         <Property name="defaultCloseOperation" type="int" value="3"/>
         <Property name="title" type="java.lang.String" value="&#x914d;&#x7f6e;&#x5de5;&#x7a0b;"/>
         <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[700, 360]"/>
+          <Dimension value="[750, 360]"/>
         </Property>
       </Properties>
 
@@ -46,7 +46,7 @@
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace pref="16" max="32767" attributes="0"/>
+                          <EmptySpace pref="26" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
@@ -75,7 +75,7 @@
                       <Component id="blockPriceDisplay" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                       <Component id="numberLabel" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="62" max="32767" attributes="0"/>
+                  <EmptySpace pref="50" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jButton6" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jButton7" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -119,14 +119,14 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
-            <Property name="text" type="java.lang.String" value="&#x62e6;&#x6807;&#x4ef7;&#xff1a;"/>
+            <Property name="text" type="java.lang.String" value="&#x5de5;&#x7a0b;&#x91cf;&#x6e05;&#x5355;&#xff1a;"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="GCblockprice">
         </Component>
         <Component class="javax.swing.JButton" name="jButton9">
           <Properties>
-            <Property name="text" type="java.lang.String" value="&#x9009;&#x62e9;&#x62e6;&#x6807;&#x4ef7;&#x6587;&#x4ef6;&#x5939;"/>
+            <Property name="text" type="java.lang.String" value="&#x9009;&#x62e9;&#x5de5;&#x7a0b;&#x91cf;&#x6587;&#x4ef6;&#x5939;"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton9ActionPerformed"/>
