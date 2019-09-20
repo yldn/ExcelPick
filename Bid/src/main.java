@@ -753,11 +753,6 @@ public class main extends javax.swing.JFrame {
         output.close();
 
     }
-
-
-
-
-
  ///////输出拦标价单项
      private  static  Sheet exportblockPrice(GCblockPriceQuantities bq){
          Sheet sh = wb.createSheet(bq.getName());
