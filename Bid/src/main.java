@@ -4,10 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
@@ -495,13 +492,11 @@ public class main extends javax.swing.JFrame {
        try {
        resultdisplay.setText("正在生成Excel，正在保存结果......");
        
-
        GCUnitPrice = summerizeUnitPrice();
        GCUnitpoints = calculatePoint();
        String savepath = GCPath.getText()+"/汇总.xlsx";
-       
-       
-           exportAll(savepath);
+       exportAll(savepath);
+           
            resultdisplay.setText("正在生成Excel，正在保存结果......");
                 Thread.sleep(1000);
                 resultdisplay.setText("保存完成！\n");
@@ -669,9 +664,10 @@ public class main extends javax.swing.JFrame {
     public static List<List<Double>> summerizeUnitPrice(){
         List<List<Double>> GCUnitPrice = new ArrayList<List<Double>>();
              //item
+//        System.out.println(GCchecklist.toArray());
         for (int i = 0; i < GCchecklist.size(); i++) {
             //company
-            GCUnitPrice.add(insertUnitPrices(i));
+            GCUnitPrice.add(insertUnitPrices(GCchecklist.get(i)));
         }
         return  GCUnitPrice;
     }
@@ -682,6 +678,7 @@ public class main extends javax.swing.JFrame {
             GCbillOfQuantities bill = companies.get(i);
             unitOfCompanies.add(bill.getQuantitiesList().get(x).getUnitPrice());
         }
+//        System.out.println(Arrays.toString(unitOfCompanies.toArray()));
         return  unitOfCompanies;
     }
 
