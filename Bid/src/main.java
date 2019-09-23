@@ -623,12 +623,6 @@ public class main extends javax.swing.JFrame {
         B.setVisible(true);
     }
 
-
-
-
-    
-    
-    
     /////////////precrocessed 
     
     ////////////////生成汇总列表
