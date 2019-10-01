@@ -6,7 +6,7 @@
 ## Alpha -- 2.0
 ### 基本读写功能以及评标算法按照规定写出，已能够基本实现功能
 ## Beta -- 1.1
-### ![Image text](/pics/H_G9$TE(_BT4}QVV~J76J[Y.png)
+### ![Image text](pics/H_G9$TE(_BT4}QVV~J76J[Y.png)
 ### ![Image text](https://raw.githubusercontent.com/yldn/ExcelPick/master/pics/UXO%60UUH7%247B63GJ%60BSPL7(Q.png))
 ### ![Image text](https://raw.githubusercontent.com/yldn/ExcelPick/master/pics/H_G9%24TE(_BT4%7DQVV~J76J%5BY.png))
 
