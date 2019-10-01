@@ -6,9 +6,11 @@
 ## Alpha -- 2.0
 ### 基本读写功能以及评标算法按照规定写出，已能够基本实现功能
 ## Beta -- 1.1
+在这里选择已经整理好的工程文件夹：
 ### ![Image text](pics/H_G9$TE(_BT4}QVV~J76J[Y.png?raw=true "project chooser" )
+文件夹结构：
 ### ![Image text](pics/UXO`UUH7$7B63GJ`BSPL7(Q.png?raw=true "enter project folder" )
-
+文件夹内需要且仅有的内容：
 ### ![Image text](pics/{8VRXO2BB(83ELHXL8FWA%S.png?raw=true "the content of folder")
 
 
