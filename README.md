@@ -11,7 +11,7 @@
 文件夹结构：
 ### ![Image text](pics/UXO`UUH7$7B63GJ`BSPL7(Q.png?raw=true "enter project folder" )
 文件夹内需要且仅有的内容：
-### ![Image text](pics/{8VRXO2BB(83ELHXL8FWA%S.png?raw=true "the content of folder")
+### ![Image text](pics/8VRXO2BB(83ELHXL8FWA%S.png?raw=true "thecontentof folder")
 
 
 #### User document : 
