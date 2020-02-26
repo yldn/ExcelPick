@@ -23,12 +23,11 @@
  
 文件夹内需要且仅有的内容：
 
-[内容]( https://github.com/yldn/ExcelPick/blob/master/pics/%7B8VRXO2BB(83ELHXL8FWA%25S.png)
+[内容](https://github.com/yldn/ExcelPick/blob/master/pics/{8VRXO2BB(83ELHXL8FWA%S.png)
 
 
 ## 输入需求和用法 
 
-``
 用户需要在评标之前将所有单位的工程文件（.GBQ5） 导出为电子版（只有分部分项工程量清单计价表）并导出到一个文件夹，并改文件夹名字为单位的名字
 工程量清单也以同样的方式导出。
 
