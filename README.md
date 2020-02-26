@@ -23,7 +23,7 @@
  
 文件夹内需要且仅有的内容：
 
- [内容](https://github.com/yldn/ExcelPick/blob/master/pics/%7B8VRXO2BB(83ELHXL8FWA%25S.png)
+[内容] (https://github.com/yldn/ExcelPick/blob/master/pics/%7B8VRXO2BB(83ELHXL8FWA%25S.png)
 
 
 ## 输入需求和用法 
