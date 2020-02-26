@@ -23,7 +23,7 @@
  
 文件夹内需要且仅有的内容：
 
-![Image text](pics/{8VRXO2BB(83ELHXL8FWA%S.png)
+![Image text](yldn/ExcelPick/pics/{8VRXO2BB(83ELHXL8FWA%S.png)
 
 
 ## 输入需求和用法 
