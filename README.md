@@ -15,7 +15,7 @@
 
 在这里选择已经整理好的工程文件夹：
 
-![Image text](pics/H_G9$TE(_BT4}QVV~J76J[Y.png?raw=true "project chooser" )
+ ![Image text](pics/H_G9$TE(_BT4}QVV~J76J[Y.png?raw=true "project chooser" )
 
 文件夹结构：
 
@@ -23,7 +23,7 @@
  
 文件夹内需要且仅有的内容：
 
-![Image text](https://github.com/yldn/ExcelPick/blob/master/pics/%7B8VRXO2BB(83ELHXL8FWA%25S.png)
+ ![](https://github.com/yldn/ExcelPick/blob/master/pics/%7B8VRXO2BB(83ELHXL8FWA%25S.png)
 
 
 ## 输入需求和用法 
